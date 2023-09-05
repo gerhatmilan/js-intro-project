@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Michroma&family=Oswald&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Michroma', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 0 0 0;
+}
+
+#main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('resources/background.jpg');
+    background-attachment: fixed;  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1300px) {
+    
+    #main {
+        background-image: url('resources/backgroundcenter.jpg');
+    }
+}
+
+@media (max-width: 500px) {
+    #menu button {
+        font-size: calc(0.95rem + 1.0vw) !important;
+    }
+}
+
+@media (max-width: 1500px) {
+    #menu {
+        width: 100%;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-top: 2em;
+    }
+
+    #menu button {
+        display: block;
+        width: auto;
+        text-align: left;
+        background-color: transparent;
+        color: white;
+        border: 0px;
+        font-size: calc(1.375rem + 1.2vw);
+        margin-top: 0em;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+
+    .panel {
+        color: white;
+        font-size: calc(1.2rem + 0.4vw);
+        background-color: transparent;
+        text-align: justify;
+        border-radius: 50px;
+    }
+
+    .centeredHorizontally {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 90%;
+        margin: 5%;
+    }
+    
+    .centeredVerticallyAndHorizontally {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+    }
+
+    #gamePanel {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1500px) {
+    #menu {
+        width: 50%;
+        margin-left: 3em;
+        margin-right: 3em;
+        padding-top: 3em;
+    }
+
+    #menu button {
+        display: block;
+        width: auto;
+        text-align: left;
+        background-color: transparent;
+        color: white;
+        border: 0px;
+        font-size: calc(1.375rem + 1.5vw);
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding: 0;
+    }
+
+    .panel {
+        color: white;
+        font-size: calc(1.375rem + 0.8vw);
+        background-color: transparent;
+        text-align: justify;
+        border-radius: 50px;
+    }
+
+    .centeredHorizontally {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 80%;
+        margin: 5% 10%;
+    }
+    
+    .centeredVerticallyAndHorizontally {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+
+    #gamePanel {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+button:hover {
+    color: yellow !important;
+    cursor: pointer;
+}
+
+button:disabled {
+    color: grey !important;
+}
+
+h1 {
+    text-align: center;
+    font-size: calc(1.375rem + 1.5vw);
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    font-weight: normal;
+}
+
+#playerNamePanel div {
+    text-align: center;
+}
+
+#playerNamePanel #reportDiv {
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+#playerNamePanel input {
+    width: 80%;
+    height: 1em;
+    font-size: 1em;
+    border-radius: 15px;
+    padding: 0.5em;
+    text-transform: uppercase;
+} 
+
+#chooseMapPanel ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1em;
+    text-align: center;
+    list-style-type: none;
+}
+
+#chooseMapPanel div.active {
+    color: yellow;
+}
+
+#chooseMapPanel div:hover {
+    cursor: pointer;
+}
+
+/* Táblázat stílusok */
+
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+td {
+    text-align: center;
+    background-color: white;
+    border: 3px solid blue;
+}
+
+/* Játéktábla */
+
+#gameTable tbody:hover {
+    cursor: pointer;
+}
+
+
+@media (max-width: 500px) {
+    table td {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7em;
+    }
+
+    #gameTable {
+        width: 90vw;
+        height: 90vw;
+    }
+    
+    #gameTable table {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 650px) {   
+     table td {
+        width: 1.3em;
+        height: 1.3em;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 800px) {   
+     table td {
+        width: 2em;
+        height: 2em;
+    }
+}
+
+@media (min-width: 800px) {   
+     table td {
+        width: 2em;
+        height: 2em;
+    }
+}
+
+td.white {
+    background-color: white;
+}
+
+td.black {
+    background-color: black;
+    color: white;
+}
+
+td.light {
+    background-color: rgb(255, 234, 132);
+}
+
+td.error {
+    background-color: rgb(255, 106, 106);
+}
+
+td.correct {
+    color: rgb(0, 255, 0);
+}
+
+/* Játékpanel */
+#gamePanel button {
+        display: block;
+        width: auto;
+        text-align: left;
+        background-color: transparent;
+        color: white;
+        border: 0px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding: 0;
+}
+
+#statusBar {
+    margin: 1% 2%;
+}
+
+#statusBar span {
+    padding-right: 3em;
+}
+
+@media (max-width: 1000px) {   
+    #statusBar span {
+        display: block;
+    }
+}
+
+#restartButton {
+    font-size: 1em;
+}
+
+/* Játék vége panel */
+#gameEndPanel {
+    border-radius: 5px;
+    height: auto;
+    text-align: center;
+}
+
+#gameEndPanel button {
+    width: auto;
+    text-align: left;
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0;
+}
+
+/* Korábbi eredmények */
+#previousResults {
+    width: 100%;
+}
+
+#previousResults th, #previousResults td {
+    all: initial;
+    padding: 0.5em;
+    font-family: 'Michroma', sans-serif;
+    font-size: calc(0.8rem + 0.5vw);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid white;
+    display: table-cell;
+    height: 100%;
+    width: 30%;
+}
+
+#previousResults tr th {
+    color:yellow;
+}
+
+/* Bezárás gomb */
+.close {
+position: fixed;
+right: 32px;
+top: 32px;
+width: 32px;
+height: 32px;
+opacity: 0.3;
+}
+.close:hover {
+opacity: 1;
+}
+.close:before, .close:after {
+position: absolute;
+left: 15px;
+content: ' ';
+height: 33px;
+width: 2px;
+background-color: white;
+}
+.close:before {
+transform: rotate(45deg);
+}
+.close:after {
+transform: rotate(-45deg);
+}

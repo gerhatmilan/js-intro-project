@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felvillanyozódás</title>
+    <link rel="shortcut icon" type="image/png" href="resources\icon.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Fő panel -->
+    <div id="main">
+        <div id="menu">
+            <button id="startGameButton">JÁTÉK INDÍTÁSA</button>
+            <button id="continueButton">JÁTÉK FOLYTATÁSA</button>
+            <button id="chooseMapButton">PÁLYA KIVÁLASZTÁSA</button>
+            <button id="playerNameButton">JÁTÉKOSNÉV MEGADÁSA</button>
+            <button id="previousResultsButton">LEGUTÓBBI JÁTÉKOK EREDMÉNYEI</button>
+            <button id="descreptionButton">JÁTÉK LEÍRÁSA</button>
+        </div>
+    </div>
+    
+    <!-- Játék panel -->
+    <div id="gamePanel" class="panel" hidden>
+        <div id="statusBar">
+            <span id="playerName"></span>
+            <span id="time">00:00:00</span>
+            <span><button id="restartButton">ÚJRAKEZDÉS</button></span>
+        </div>
+        <div id="gameTable" class="centeredVerticallyAndHorizontally">   
+        </div> 
+    </div>
+
+    <!-- Játék vége panel -->
+    <div id="gameEndPanel" class="panel centeredVerticallyAndHorizontally" hidden>
+    </div>
+
+    <!-- Pályaválasztó panel -->
+    <div id="chooseMapPanel" class="centeredHorizontally panel" hidden>
+        <h1>VÁLASSZ AZ ELÉRHETŐ PÁLYÁK KÖZÜL!</h1>
+        <div id="easy">
+            <ul>
+                <li>KÖNNYŰ 7X7-ES PÁLYA</li>
+            </ul>
+            <table>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="black">0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="medium">
+            <ul>
+                <li>HALADÓ 7x7-ES PÁLYA</li>
+            </ul>
+            <table>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="black">0</td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td class="black">3</td>
+                    <td></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="black">2</td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td class="black">2</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="hard">
+            <ul>
+                <li>EXTRÉM 10x10-ES PÁLYA</li>
+            </ul>
+            <table>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">3</td>
+                    <td></td>
+                    <td class="black">2</td>
+                    <td></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="black">0</td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="black">1</td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td class="black">1</td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="black">1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">0</td>
+                    <td class="black"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="black">3</td>
+                    <td></td>
+                    <td class="black"></td>
+                    <td></td>
+                    <td class="black">0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="black">0</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Játékosnév megadása panel-->
+    <div id="playerNamePanel" class="centeredVerticallyAndHorizontally panel" hidden>
+        <h1>ADJ MEG EGY JÁTÉKOSNEVET!</h1>
+        <div id="inputDiv">
+            <input id="playerNameInput" type="text" placeholder="Játékosnév..." maxlength="25">
+        </div>
+        <div id="reportDiv" hidden>
+        </div>
+    </div>
+
+    <!-- Eredmények panel -->
+    <div id="previousResultsPanel" class="centeredHorizontally panel" hidden>
+        <h1>LEGUTÓBBI JÁTÉKOK EREDMÉNYEI</h1>
+        <table id="previousResults">
+        </table>
+    </div>
+
+    <!-- Játék leírása panel-->
+    <div id="gameDescreptionPanel" class="centeredHorizontally panel" hidden>
+        <h1>A JÁTÉK LEÍRÁSA</h1>
+        A JÁTÉK CÉLJA, HOGY AZ ÖSSZES FEHÉR CELLÁT MEGVILÁGÍTSUK. A FEHÉR CELLÁKBA VILLANYKÖRTÉKET LEHET ELHELYEZNI. A VILLANYKÖRTÉKBŐL A FÉNY VÍZSZINTESEN ÉS FÜGGŐLEGESEN TERJED. A FEKETE CELLÁK AKADÁLYOZZÁK A FÉNY TERJEDÉSÉT. HA EGY FEKETE CELLÁBAN SZÁM SZEREPEL, AZ AZT JELZI, HOGY A KÖRNYEZŐ CELLÁKBAN (VÍZSZINTESEN VAGY FÜGGŐLEGESEN) HÁNY DARAB VILLANYKÖRTÉT KELL ELHELYEZNI. KÉT VILLANYKÖRTE NEM VILÁGÍTHATJA MEG EGYMÁST.
+    </div>
+
+    <!-- Bezárás gomb -->
+    <a href="#" class="close" hidden></a>
+    <script src="index.js"></script>
+</body>
+</html>
